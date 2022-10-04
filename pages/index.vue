@@ -7,17 +7,24 @@
 //   },
 // });
 
-const { data: user2 } = useFetch("/api/auth/login", {
-  params: {
-    email: "gg@gmail.com",
-    password: "wrongpass",
-  },
-});
+// const { data: user } = useFetch("/api/auth/login", {
+//   params: {
+//     email: "gg@gmail.com",
+//     password: "testpass",
+//   },
+// });
+// const { data: user2 } = useFetch("/api/auth/login", {
+//   params: {
+//     email: "gg@gmail.com",
+//     password: "wrongpass",
+//   },
+// });
 </script>
 
 <template>
-  {{ user }}
+  <!-- {{ user }}
   ----------
-  {{ user2 }}
-  <SignIn></SignIn>
+  {{ user2 }} -->
+  <!-- <SignIn></SignIn> -->
+  <DashBoard></DashBoard>
 </template>
