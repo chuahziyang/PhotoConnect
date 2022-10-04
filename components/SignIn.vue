@@ -1,19 +1,20 @@
-<!--
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
--->
+<script setup>
+import { Form, Field } from "vee-validate";
+async function login(values) {
+  const { email, password } = values;
+  alert(JSON.stringify({ email, password }));
+
+  const { data: user } = await useFetch("/api/auth/login", {
+    params: {
+      email,
+      password,
+    },
+  });
+
+  console.log(user.value);
+}
+</script>
+
 <template>
   <!--
     This example requires updating your template:
@@ -134,7 +135,7 @@
           </div>
 
           <div class="mt-6">
-            <form action="#" method="POST" class="space-y-6">
+            <Form @submit="login" class="space-y-6">
               <div>
                 <label
                   for="email"
@@ -143,7 +144,7 @@
                   Email address
                 </label>
                 <div class="mt-1">
-                  <input
+                  <Field
                     id="email"
                     name="email"
                     type="email"
@@ -162,7 +163,7 @@
                   Password
                 </label>
                 <div class="mt-1">
-                  <input
+                  <Field
                     id="password"
                     name="password"
                     type="password"
@@ -175,7 +176,7 @@
 
               <div class="flex items-center justify-between">
                 <div class="flex items-center">
-                  <input
+                  <Field
                     id="remember-me"
                     name="remember-me"
                     type="checkbox"
@@ -207,7 +208,7 @@
                   Sign in
                 </button>
               </div>
-            </form>
+            </Form>
           </div>
         </div>
       </div>

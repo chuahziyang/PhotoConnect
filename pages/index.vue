@@ -1,11 +1,11 @@
 <script setup>
 // const { data } = useFetch("/api/test");
-const { data: user } = useFetch("/api/auth/login", {
-  params: {
-    email: "gg@gmail.com",
-    password: "testpass",
-  },
-});
+// const { data: user } = useFetch("/api/auth/login", {
+//   params: {
+//     email: "gg@gmail.com",
+//     password: "testpass",
+//   },
+// });
 
 const { data: user2 } = useFetch("/api/auth/login", {
   params: {
@@ -19,5 +19,5 @@ const { data: user2 } = useFetch("/api/auth/login", {
   {{ user }}
   ----------
   {{ user2 }}
-  <!-- <SignIn></SignIn> -->
+  <SignIn></SignIn>
 </template>

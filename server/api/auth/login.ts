@@ -13,5 +13,8 @@ export default defineEventHandler(async (event) => {
   });
 
   const success = await bcrypt.compare(password, user.password);
+
+  console.log(success + "asdasd");
+
   return success ? user : {};
 });
